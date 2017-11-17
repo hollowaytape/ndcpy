@@ -1,11 +1,12 @@
 ---
 environment:
     matrix:
+        - BUILD_MODE: "Script"
         - PYTHON: "C:\\Python36"
         - PYTHON_VERSION: "3.6.x"
         - PYTHON_ARCH: "32"
 install:
-    - "curl http://euee.web.fc2.com/tool/NDC0A06.LZH -o ndc.lzh"
-    - "7z x ndc.lzh"
+    - cmd: "curl http://euee.web.fc2.com/tool/NDC0A06.LZH -o ndc.lzh"
+    - cmd: "7z x ndc.lzh"
 test_script:
     - "python setup.py test"
